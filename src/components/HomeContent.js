@@ -3,6 +3,7 @@ import MainSection from './HomeComponents/MainSection/MainSection'
 import SubSection from './HomeComponents/SubSection/SubSection';
 import SubSectionElement from './HomeComponents/SubSection/SubSectionElement';
 import homePageStore from './HomeComponents/HomeStore'
+import Form from './Form'
 
 class HomeContent extends React.Component {
     constructor(props) {
@@ -40,6 +41,7 @@ class HomeContent extends React.Component {
         console.log(homePageStore.categories.get('categories')[0].mainIconUrl)
         return (
             <div>
+                <Form />
                 <MainSection store={homePageStore}/>
                 <SubSection store={homePageStore}/>
             </div>
