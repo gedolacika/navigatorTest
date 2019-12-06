@@ -6,7 +6,7 @@ import contentHtml from './AboutUsContent'
 import MainSectionDescription from '../MainSectionDescription'
 import ReactCompareImage from 'react-compare-image'
 
-import store from '../../../../stores/HomeScreenStore'
+
 
 const MainSection = props => (
     <div style={style.container}>
@@ -14,7 +14,7 @@ const MainSection = props => (
             <img 
                 style={style.leftImage} 
                 src={ 
-                    store.leftSideImageUrl
+                    props.store.leftSideImageUrl
                 } />
         </div>
 
@@ -22,18 +22,18 @@ const MainSection = props => (
 
             <div style={style.categoryContainer}>
                 {console.log('./bubik_slogen.png')}
-                {console.log( store.leftSideImageUrl)}
-                <MainSectionCategoryContainer data={props.store.categories.get('categories')} />
+                {console.log( props.store.leftSideImageUrl)}
+                <MainSectionCategoryContainer />
             </div>
             <div style={style.introduction}>
-                <MainSectionDescription content={props.store.htmlTexts.get('htmlTexts')[0]} />
+                <MainSectionDescription content={props.store.htmlContent} />
             </div>
             <div style={style.slider}>
                 <ReactCompareImage 
                     handle={<img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/slider-53-886649.png" />}
                     sliderLineColor="#a7a7a7" 
-                    leftImage={store.sliderLeftImageUrl} 
-                    rightImage={store.sliderRightImageUrl} />
+                    leftImage={props.store.sliderLeftImageUrl} 
+                    rightImage={props.store.sliderRightImageUrl} />
             </div>
         </div>
 

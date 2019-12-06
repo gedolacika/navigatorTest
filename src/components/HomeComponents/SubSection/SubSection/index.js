@@ -2,17 +2,11 @@ import React from 'react'
 import style from './style'
 import SubSectionElement from '../SubSectionElement'
 import PropTypes from 'prop-types';
-import { observer } from "mobx-react"
 
 const SubSection = props => (
     
     <div style={style.container}>
-        {
-            <observer>
-                {() => console.log(observer)}
-            </observer>
-        }
-        {props.store.subSectionContent.get('subSectionContent').map((currentElement) =>
+        {props.store.subSectionContent.map((currentElement) =>
             <div 
                 key={currentElement.upperTitle}>
                 <SubSectionElement 

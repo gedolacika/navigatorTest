@@ -2,11 +2,12 @@ import React from 'react'
 import MainSectionCategory from '../MainSectionCategory'
 import style from './style'
 import PropTypes from 'prop-types'
+import store from '../../../../stores/HomeCategory'
 
 
 const MainSectionCategoryContainer = props => (
         <div>
-            {props.data.map((currentElement) => {
+            {store.map((currentElement) => {
                 return (
                     <div
                         key={currentElement.mainTitle} 
@@ -23,9 +24,5 @@ const MainSectionCategoryContainer = props => (
             })}
         </div>
 )
-
-MainSectionCategoryContainer.propTypes = {
-    data: PropTypes.array
-}
 
 export default MainSectionCategoryContainer

@@ -1,10 +1,6 @@
 import { observable } from "mobx"
 
 class MenuItem {
-    title = observable.map({ title: '' })
-    link = observable.map({ link: '' })
-    iconUrl = observable.map({ iconUrl: '' })
-
     constructor(title, link, iconUrl) {
         this.title = title
         this.link = link
@@ -13,11 +9,6 @@ class MenuItem {
 }
 
 class HomeCategory {
-    mainIconUrl = observable.map({ mainIconUrl: '' })
-    mainTitle = observable.map({ mainTitle: '' })
-    mainDescription = observable.map({ mainDescription: '' })
-    menuItems = observable.map({ menuItems: '' })
-
     constructor(mainIconUrl, mainTitle, mainDescription, menuItems) {
         this.mainIconUrl = mainIconUrl
         this.mainTitle = mainTitle
