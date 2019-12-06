@@ -5,6 +5,14 @@ import SubSectionElement from './HomeComponents/SubSection/SubSectionElement';
 import homePageStore from './HomeComponents/HomeStore'
 import Form from './Form'
 import store from '../stores/HomeScreenStore'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useRouteMatch,
+    useParams
+  } from "react-router-dom";
 
 class HomeContent extends React.Component {
     constructor(props) {
@@ -14,22 +22,33 @@ class HomeContent extends React.Component {
     render() {
         console.log(homePageStore.categories.get('categories')[0].mainIconUrl)
         return (
-            <div>
-                <Form />
-                <MainSection store={store}/>
-                <SubSection store={store}/>
-            </div>
+
+            <Router>
+                <div>
+                    <ul>
+                        <li>
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link to="/edit-content">Edit content</Link>
+                        </li>
+                    </ul>
+
+                    <Switch>
+                        <Route path="/edit-content">
+                            <Form />
+                            <MainSection store={store} />
+                            <SubSection store={store} />
+                        </Route>
+                        <Route path="/">
+                            <MainSection store={store} />
+                            <SubSection store={store} />
+                        </Route>
+                    </Switch>
+                </div>
+            </Router>
         )
     }
 }
 
 export default HomeContent;
-
-
-/*
-
-
-    /*"start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",*/
