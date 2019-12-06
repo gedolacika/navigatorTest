@@ -13,6 +13,7 @@ import {
     useRouteMatch,
     useParams
   } from "react-router-dom";
+import {observer} from 'mobx-react'
 
 class HomeContent extends React.Component {
     constructor(props) {
