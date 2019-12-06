@@ -5,6 +5,7 @@ import style from './style'
 import contentHtml from './AboutUsContent'
 import MainSectionDescription from '../MainSectionDescription'
 import ReactCompareImage from 'react-compare-image'
+import {observer} from 'mobx-react'
 
 
 
@@ -42,4 +43,4 @@ const MainSection = props => (
     </div>
 )
 
-export default MainSection
+export default observer(MainSection)

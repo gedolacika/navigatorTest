@@ -8,23 +8,9 @@ class Form extends React.Component {
     constructor(props) {
         super(props)
 
-        this.htmlContentChanged = this.htmlContentChanged.bind(this)
-        this.leftPhotoUrlChanged = this.leftPhotoUrlChanged.bind(this)
-        this.rightPhotoUrlChanged = this.rightPhotoUrlChanged.bind(this)
-        
-        this.setHtmlContent = action( 'htmlCont',this.htmlContentChanged)
-
-    }
-
-    htmlContentChanged(value){
-        store.htmlContent = value
-    }
-
-    leftPhotoUrlChanged(){
-
-    }
-
-    rightPhotoUrlChanged(){
+        this.state = {
+            htmlContent: store.htmlContent
+        }
 
     }
 
@@ -40,11 +26,11 @@ class Form extends React.Component {
 
                     <li>
                         <label>Left photo url: </label>
-                        <input style={{marginLeft : 20}} type="text" name="userid" size="50" onChange={(e) => {this.leftPhotoUrlChanged(e.target.value)}} />
+                        <input style={{marginLeft : 20}} type="text" name="userid" size="50"  />
                     </li>
                     <li>
                         <label>Right photo url: </label>
-                        <input style={{marginLeft : 20}} type="text" name="userid" size="50" onChange={(e) => {this.rightPhotoUrlChanged(e.target.value)}} />
+                        <input style={{marginLeft : 20}} type="text" name="userid" size="50"  />
                     </li>
                 </ul>
             </form>

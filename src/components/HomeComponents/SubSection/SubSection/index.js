@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 const SubSection = props => (
     
     <div style={style.container}>
+        {console.log(props.store.htmlContent)}
         {props.store.subSectionContent.map((currentElement) =>
             <div 
                 key={currentElement.upperTitle}>

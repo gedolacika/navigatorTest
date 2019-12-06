@@ -1,5 +1,6 @@
 import React from 'react'
 import style from './style'
+import {observer} from 'mobx-react'
 
 
 const MainSectionDescription = props => (
@@ -9,4 +10,4 @@ const MainSectionDescription = props => (
     </div>
 )
 
-export default MainSectionDescription
+export default observer(MainSectionDescription)
